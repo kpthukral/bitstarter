@@ -4,10 +4,10 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request,response) {
-app.use(express.static(__dirname, '/public'));
+app.use(express.static(__dirname));
 var fs = require('fs');
 var buffer = new Buffer(27);
-var infile= "/public/index.html";
+var infile= "./index.html";
 buffer.write(fs.readFileSync(infile,'utf8'));
 
  response.send(buffer.toString());
