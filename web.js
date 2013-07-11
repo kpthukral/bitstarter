@@ -2,11 +2,12 @@
 var express = require('express');
 
 var app = express.createServer(express.logger());
-app.use(express.static(__dirname+'/bitstarter'));
+
 app.get('/', function(request,response) {
+app.use(express.static(__dirname, '/public'));
 var fs = require('fs');
 var buffer = new Buffer(27);
-var infile= "./index.html";
+var infile= "/public/index.html";
 buffer.write(fs.readFileSync(infile,'utf8'));
 
  response.send(buffer.toString());
