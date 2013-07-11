@@ -2,9 +2,9 @@
 var express = require('express');
 
 var app = express.createServer(express.logger());
-
-app.get('/', function(request,response) {
 app.use(express.static(__dirname));
+app.get('/', function(request,response) {
+
 var fs = require('fs');
 var buffer = new Buffer(27);
 var infile= "./index.html";
